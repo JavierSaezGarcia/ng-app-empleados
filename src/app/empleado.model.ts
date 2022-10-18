@@ -1,3 +1,5 @@
+// npm install bootstrap jquery @popperjs/core
+
 export class Empleado{
     nombre:string="";
     apellido: string="";
@@ -11,3 +13,4 @@ export class Empleado{
         this.salario = salario;
     }
 }
+
