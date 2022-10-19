@@ -34,32 +34,13 @@
 
 <br>
 <br>
-
-<h3 style="text-align: center;"> {{titulo}}</h3>
+<h3> {{titulo}}</h3>
 <br>
-<div class="container">
-  <div class="row">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Cargo</th>
-          <th>Salario</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of empleados; index as i">
-          <td>{{i+1}}</td>
-          <td>{{item.nombre}}</td>
-          <td>{{item.apellido}}</td>
-          <td>{{item.cargo}}</td>
-          <td>{{item.salario}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+
+    
+      
+<app-empleado-hijo-component *ngFor="let item of empleados; let i=index" [empleadoDeLista]="item" [indice]="i"></app-empleado-hijo-component>
+     
+
 
 
