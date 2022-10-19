@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Empleado } from './empleado.model';
+import { EmpleadosService } from './empleados.service';
 import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @Component({
@@ -7,31 +8,32 @@ import { ServicioEmpleadosService } from './servicio-empleados.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   titulo = 'Listado de Empleados';
   formulario = 'Formulario inscripcion';
 
-  constructor(private miServicio:ServicioEmpleadosService){}
+  constructor(private miServicio:ServicioEmpleadosService, private empleadosService:EmpleadosService){
+    // se puede hacer asi desde el constructor o implementandolo en el metodo OnInit e insertarlo ahi para rellenar el array
+    //this.empleados= this.empleadosService.empleados;
+  }
+  ngOnInit(): void {
+    this.empleados= this.empleadosService.empleados;
+  }
 
-  empleados:Empleado[] = [
-    new Empleado("Javier","Saez","Presidente",7500),
-    new Empleado("Aleth","Doblas","Asesora",6300),
-    new Empleado("Luis","Perez","Pelota",1500),
-    new Empleado("Anatxa","Roger","Recepcionista",1400),
-    new Empleado("Laura","Narvaez","Developer",3000),
-
-  ];
+  empleados:Empleado[] = [];
 
   agregarEmpleado(){
     let miEmpleado= new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
     this.miServicio.muestraMensaje("Nombre del empleado: " + miEmpleado.nombre + "\nApellido: " + miEmpleado.apellido + "\nCargo: " + miEmpleado.cargo + "\nSalario: " + miEmpleado.salario)
-    this.empleados.push(miEmpleado); // metodo push para agregar al array
-  }
-  
+    this.empleadosService.addEmpleadoServicio(miEmpleado);
+  } 
 
   cuadroNombre:string="";
   cuadroApellido:string="";
   cuadroCargo:string="";
   cuadroSalario:number=0;
+
+
+
 }
 
