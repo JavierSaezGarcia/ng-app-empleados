@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <p>actualiza-component works!</p>
+
+        <form class="form row">
+            <div class="form-group col-md-3">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre" [(ngModel)]="cuadroNombre">
+            </div>
+            <div class="form-group col-md-3">
+            <label for="apellido">Apellido: </label>
+            <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" [(ngModel)]="cuadroApellido">
+            </div>
+            <div class="form-group col-md-3">
+            <label for="cargo">Cargo: </label>
+            <input type="text" name="cargo" class="form-control" id="cargo" placeholder="Cargo" [(ngModel)]="cuadroCargo">
+            </div>
+            <div class="form-group col-md-3">
+            <label for="salario">Salario: </label>
+            <input type="number" name="salario" class="form-control" id="salario" placeholder="Salario" [(ngModel)]="cuadroSalario">
+            </div>
+            
+            <div class="form-group col-md-3">
+                <button [style.display]="isDivVisible" type="submit" class="btn btn-warning" (click)="actualizaEmpleado()" style="margin-top: 25px;margin-right:10px">Actualizar</button>
+                
+                <button [style.display]="isDivVisible1" type="submit" class="btn btn-danger" (click)="actualizaEmpleado()" style="margin-top: 25px;">Eliminar</button>
+            </div>
+            
+            
+        </form>
+        <div style="text-align: center;">
+            <button class="btn btn-outline-primary" (click)="volverHome()">Ir a Home</button>
+        </div>
+    </div>
+</div>

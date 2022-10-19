@@ -1,48 +1,34 @@
-<div class="container">
-  <div class="row">
-  <h4 style="text-align: center;">{{formulario}}</h4>
-  <hr>
-    <form class="form row">
-      <div class="form-group col-md-3">
-        <label for="nombre">Nombre: </label>
-        <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre" [(ngModel)]="cuadroNombre">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="apellido">Apellido: </label>
-        <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" [(ngModel)]="cuadroApellido">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="cargo">Cargo: </label>
-        <input type="text" name="cargo" class="form-control" id="cargo" placeholder="Cargo" [(ngModel)]="cuadroCargo">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="salario">Salario: </label>
-        <input type="number" name="salario" class="form-control" id="salario" placeholder="Salario" [(ngModel)]="cuadroSalario">
-      </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/proyectos">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/quienes">Quiénes somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/contacto">Contacto</a>
+        </li>
+      </ul>
       
-      <div class="form-group col-md-3">
-        <button type="submit" class="btn btn-outline-primary" (click)="agregarEmpleado()" style="margin-top: 25px;">SAVE</button>
-      </div>
-      
-    </form>
-    <h1></h1>
-  <hr>
+    </div>
   </div>
-   
- 
-</div>
+</nav>
 
-<br>
-<br>
-<div class="container-fluid">
-<h3> {{titulo}}</h3>
-</div>
-<br>
 
-    
-      
-<app-empleado-hijo-component *ngFor="let item of empleados; let i=index" [empleadoDeLista]="item" [indice]="i"></app-empleado-hijo-component>
-     
+<router-outlet></router-outlet>
+
+
 
 
 

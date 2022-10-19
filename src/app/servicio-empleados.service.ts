@@ -9,6 +9,6 @@ export class ServicioEmpleadosService {
   constructor() { }
 
   muestraMensaje(mensaje:string){
-    confirm(mensaje);
+    alert(mensaje);
   }
 }

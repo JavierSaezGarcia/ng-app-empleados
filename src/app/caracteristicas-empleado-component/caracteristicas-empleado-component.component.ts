@@ -14,7 +14,7 @@ export class CaracteristicasEmpleadoComponentComponent implements OnInit {
 
   addCaracteristica(value:string){
     //this.miServicio.muestraMensaje(value);
-    //this.caracteristicasEmpleado.emit(value);
+    this.caracteristicasEmpleado.emit(value);
   }
   
   ngOnInit(): void {
