@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Empleado } from './empleado.model';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+@Injectable()
 export class EmpleadosService {
+
+  constructor(private servicioVentanaEmergente: ServicioEmpleadosService) { }
   empleados:Empleado[] = [
     new Empleado("Javier","Saez","Presidente",7500),
     new Empleado("Aleth","Doblas","Asesora",6300),
@@ -14,8 +16,14 @@ export class EmpleadosService {
 
   ];
   addEmpleadoServicio(empleado:Empleado){
-    this.empleados.push(empleado); // metodo push para agregar al array
+    this.servicioVentanaEmergente.muestraMensaje("Persona a agregar: " + empleado.nombre + "\nApellido: " + empleado.apellido + "\nCargo: " + empleado.cargo + "\nSalario: " + empleado.salario)
+    if (confirm() == true) {
+      this.empleados.push(empleado); // metodo push para agregar al array
+    }else{
+      alert("Empleado no insertado")
+    } 
+    
   }
 
-  constructor() { }
+  
 }
