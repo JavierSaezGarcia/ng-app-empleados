@@ -9,6 +9,10 @@ export class CaracteristicasEmpleadoComponentComponent implements OnInit {
 
   @Output() caracteristicasEmpleado = new EventEmitter<string>();
 
+  addCaracteristica(value:string){
+    this.caracteristicasEmpleado.emit(value);
+  }
+
   constructor() { }
 
   ngOnInit(): void {
