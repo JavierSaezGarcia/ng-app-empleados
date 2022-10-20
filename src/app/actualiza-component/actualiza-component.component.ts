@@ -55,36 +55,29 @@ export class ActualizaComponentComponent implements OnInit {
     this.router.navigate(['']);
     
 
-  }
+  }  
   
-  
-
-  // actualizaEmpleado(){
-  //   let miEmpleado= new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-  //   // this.miServicio.muestraMensaje("Nombre del empleado: " + miEmpleado.nombre + "\nApellido: " + miEmpleado.apellido + "\nCargo: " + miEmpleado.cargo + "\nSalario: " + miEmpleado.salario)
-  //   this.empleadosService.actualizarEmpleado(this.indice, miEmpleado);
-  //   // redireccionar
-  //   this.router.navigate(['']);
-  // } 
-  // eliminaEmpleado(){
-   
-  //   this.empleadosService.eliminarEmpleado(this.indice);
-  //   // redireccionar
-  //   this.router.navigate(['']);
-
-  // }
   actualizaEmpleado(){
     if(this.accion==1){   
       let miEmpleado= new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
       // this.miServicio.muestraMensaje("Nombre del empleado: " + miEmpleado.nombre + "\nApellido: " + miEmpleado.apellido + "\nCargo: " + miEmpleado.cargo + "\nSalario: " + miEmpleado.salario)
       this.empleadosService.actualizarEmpleado(this.indice, miEmpleado);
       // redireccionar
+      setTimeout(function reset() {
+        location.reload();
+      },50);
+
       this.router.navigate(['']);
+      
       
     }else{      
       this.empleadosService.eliminarEmpleado(this.indice);
   // redireccionar
+    setTimeout(function reset() {
+      location.reload();
+    },50);
       this.router.navigate(['']);
+      
 
     }
 
