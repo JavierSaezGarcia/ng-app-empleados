@@ -53,8 +53,10 @@ export class ActualizaComponentComponent implements OnInit {
   volverHome(){
 
     this.router.navigate(['']);
+    
 
   }
+  
   
 
   // actualizaEmpleado(){
@@ -78,6 +80,7 @@ export class ActualizaComponentComponent implements OnInit {
       this.empleadosService.actualizarEmpleado(this.indice, miEmpleado);
       // redireccionar
       this.router.navigate(['']);
+      
     }else{      
       this.empleadosService.eliminarEmpleado(this.indice);
   // redireccionar
@@ -95,11 +98,9 @@ export class ActualizaComponentComponent implements OnInit {
   cuadroApellido:string="";
   cuadroCargo:string="";
   cuadroSalario:number=0;
-
   indice:number;
 
-}
-function mod(mod: any) {
-  throw new Error('Function not implemented.');
+  
+
 }
 
