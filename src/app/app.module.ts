@@ -16,6 +16,9 @@ import { ErrorPersonalizadoComponent } from './error-personalizado/error-persona
 import { DataServices } from './data.services';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+import { CookieService } from 'ngx-cookie-service';
+
 
 // creas una constante para las rutas
 const appRoutes:Routes=[
@@ -24,6 +27,7 @@ const appRoutes:Routes=[
   {path:'quienes', component:QuienesComponentComponent},
   {path:'contacto', component:ContactoComponentComponent},
   {path:'actualiza/:id', component:ActualizaComponentComponent},
+  {path:'login', component:LoginComponent},
   // los dos asteriscos es un comodin que angular le dice que todo lo que no sea lo anterior es la pagina de rrror
   {path:'**', component:ErrorPersonalizadoComponent}
   
@@ -39,16 +43,18 @@ const appRoutes:Routes=[
     QuienesComponentComponent,
     ContactoComponentComponent,
     ActualizaComponentComponent,
-    ErrorPersonalizadoComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorPersonalizadoComponent
+    
   ],
   imports: [
     BrowserModule,     
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule,
+    HttpClientModule
+    
   ],
-  providers: [ServicioEmpleadosService, EmpleadosService, DataServices],
+  providers: [ServicioEmpleadosService, EmpleadosService, DataServices, LoginService, CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,60 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row">
+        
+        <div class="col-lg-12" style="margin-top:50px"></div>
+        <div class="col-lg-4"></div>
+        
+        <div class="col-lg-4">
+            <div class="card" style="padding:2rem">
+                
+                    <h4 style="text-align: center;">Formulario de inscripción</h4>
+                <hr>
+        <form class="form-group" #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email" ngModel />      
+            </div>
+        
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" ngModel />            
+            </div>
+        
+            <!-- 2 column grid layout for inline styling -->
+            
+        
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+        
+            <!-- Register buttons -->
+            <div class="text-center">
+            <p>Not a member? <a href="#!">Register</a></p>
+            <p>or sign up with:</p>
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+            </button>
+        
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+            </button>
+        
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+            </button>
+        
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github"></i>
+            </button>
+            </div>
+        
+        </form>
+    </div>
+        
+        
+    </div>
+        
+    </div> 
+    
+</div>

@@ -13,7 +13,7 @@ import { ServicioEmpleadosService } from '../servicio-empleados.service';
 export class HomeComponentComponent implements OnInit {
 
   titulo = 'Listado de Empleados';
-  formulario = 'Formulario inscripcion';
+ 
   
   constructor(private miServicio:ServicioEmpleadosService, private empleadosService:EmpleadosService,private router:Router) { 
     // se puede hacer asi desde el constructor o implementandolo en el metodo OnInit e insertarlo ahi para rellenar el array
